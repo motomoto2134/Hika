@@ -11,5 +11,11 @@ class Product(models.Model):
      stock = models.PositiveBigIntegerField()
      rating = models.PositiveBigIntegerField()
      brand = models.CharField(max_length=32)
-
+     
+class Order(models.Model):
+     product =models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
+     addrss = models.CharField(max_length=32)
+     email = models.EmailField()
+     card = models.CharField(max_length=30)
+     count = models.PositiveIntegerField(default=1)
      

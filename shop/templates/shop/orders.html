@@ -1,0 +1,17 @@
+{%extends 'core/base.html'%} 
+{%block title%}ю{%endblock%}
+{%block main%}
+    <div class="flex-row align-items-center">
+          {%for orders in order%}
+        <div class=" d-flex border " style="width: 18rem;">
+            <div class="d-flex flex-column ">
+              <h4 class="card-title">{{orders.addrss}}</h4>
+              <h4 class="card-title">{{orders.email}}</h4>
+              <h4 class="card-title">{{orders.card}}</h4>
+              <h4 class="card-title">{{orders.count}}</h4>
+            </div>
+          </div>
+
+        </div>
+   {%endfor%}
+{%endblock%}

@@ -1,22 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="">
-</head>
-<body>
+{%extends 'core/base.html'%} 
+{%block title%}Каталог{%endblock%}
+{%block main%}
     <h1>CATALOG</h1>
+    <div class="flex-row">
     {%for product in products%}
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
+    <div class="card  d-flex flex-row " style="width: 18rem;">
+        <img src="{{product.img.url}}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{product.title}}</h5>
-          <p class="card-text">product example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">перейти</a>
+          <h3 class="card-title">{{product.title}}</h5>
+            <div class="d-flex flex-row">
+              <p class="fs-5">{{product.price}}  ₽</p>
+              <span class="text-danger">{{product.discount}} %</span>
+            </div>
+            <div class="">
+            <img width="28" height="28" src="https://img.icons8.com/fluency/48/filled-star.png" alt="filled-star"/>
+            </div>
+          <a href="{%url 'product' product_id=product.id%}" class="btn btn-primary">подробнее</a>
         </div>
       </div>
     {%endfor%}
-</body>
-</html>
+{%endblock%}
