@@ -1,0 +1,13 @@
+{%extends 'core/base.html'%} 
+{%block title%}Вход{%endblock%}
+{%block main%}
+<h1 class="text-center">Вход</h1>
+<p>{{error}}</p>
+<form class="d-flex flex-column mx-auto gap-1 mt-5" action="" method="post" style="width: 300px; ">
+    {%csrf_token%}
+    <input class="form-control" type="text" placeholder="Почта" name="username">
+    <input class="form-control" type="password" placeholder="Пароль" name="password">
+    <button class="btn btn-primary">Войти</button>
+</form>
+
+{%endblock%}

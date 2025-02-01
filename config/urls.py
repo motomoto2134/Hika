@@ -18,11 +18,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from core.views import sign_up
+from core.views import sign_in
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('shop.urls'))
+    path('', include('shop.urls')),
+    path('sign_up/', sign_up, name='sign_up'),
+    path('sign_in/', sign_in, name='sign_in'),
 
 ]
 if settings.DEBUG:

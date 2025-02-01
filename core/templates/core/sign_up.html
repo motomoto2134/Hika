@@ -1,0 +1,20 @@
+{%extends 'core/base.html'%} 
+{%block title%}Регистрация{%endblock%}
+{%block main%}
+<h1 class="text-center">Регистрация</h1>
+<p>{{error}}</p>
+<form class="d-flex flex-column mx-auto gap-1 mt-5" action="" method="post" style="width: 300px; ">
+    {%csrf_token%}
+    <input class="form-control" type="text" placeholder="Имя" name="username">
+    <input class="form-control" type="email" placeholder="Почта" name="email">
+    <input class="form-control" type="password" placeholder="Пароль" name="password">
+    <input class="form-control" type="password" placeholder="Повторите пароль" name="repeat_password">
+    <button class="btn btn-primary">Зарегистрироваться</button>
+</form>
+
+
+{%endblock%}
+
+
+
+
